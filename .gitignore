@@ -1,0 +1,51 @@
+# Python cache and build artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+build/
+dist/
+*.egg-info/
+
+# Virtual environments and local configuration
+.venv/
+venv/
+env/
+.env
+.env.*
+
+# IDE and OS files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Datasets and generated experiment artifacts
+data/
+datasets/
+VGG_BatchNorm/data/
+outputs/
+results/
+runs/
+logs/
+figures/
+checkpoints/
+weights/
+saved_models/
+
+# Model weights and large binary artifacts
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.npz
+*.npy
+*.tar
+*.tar.gz
+*.zip
+
+# Report files
+report.md
+report.pdf
