@@ -1,0 +1,25 @@
+{
+  "data": {
+    "batch_size": 128,
+    "augment": "strong",
+    "cutout": true
+  },
+  "model": {
+    "name": "resnet",
+    "base_channels": 64,
+    "blocks_per_stage": 3,
+    "activation": "relu",
+    "dropout": 0.10,
+    "fc_dim": 256
+  },
+  "train": {
+    "epochs": 200,
+    "lr": 0.1,
+    "optimizer": "sgd",
+    "weight_decay": 0.0005,
+    "label_smoothing": 0.1,
+    "mixup_alpha": 0.2,
+    "output_dir": "./outputs/cifar10_baseline_relu"
+  }
+}
+
