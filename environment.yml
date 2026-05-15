@@ -1,4 +1,4 @@
-name: nndl-pj2
+name: nndl-pj2-ljh
 channels:
   - pytorch
   - nvidia
