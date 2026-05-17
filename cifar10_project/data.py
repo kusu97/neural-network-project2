@@ -6,7 +6,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 import torch
-from torch.utils.data import DataLoader, random_split
+from torch.utils.data import DataLoader, Subset
 from torchvision import datasets, transforms
 
 
@@ -97,8 +97,11 @@ def create_loaders(config: LoaderConfig) -> tuple[DataLoader, DataLoader, DataLo
 
     train_size = len(train_full) - config.val_size
     generator = torch.Generator().manual_seed(config.seed)
-    train_subset, _ = random_split(train_full, [train_size, config.val_size], generator=generator)
-    _, val_subset = random_split(val_full, [train_size, config.val_size], generator=generator)
+    indices = torch.randperm(len(train_full), generator=generator).tolist()
+    train_indices = indices[:train_size]
+    val_indices = indices[train_size:]
+    train_subset = Subset(train_full, train_indices)
+    val_subset = Subset(val_full, val_indices)
 
     pin_memory = torch.cuda.is_available()
     loader_kwargs = {
@@ -111,4 +114,3 @@ def create_loaders(config: LoaderConfig) -> tuple[DataLoader, DataLoader, DataLo
     val_loader = DataLoader(val_subset, shuffle=False, **loader_kwargs)
     test_loader = DataLoader(test_set, shuffle=False, **loader_kwargs)
     return train_loader, val_loader, test_loader
-
