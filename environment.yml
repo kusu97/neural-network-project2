@@ -1,13 +1,14 @@
 name: nndl-pj2-ljh
 channels:
-  - pytorch
-  - nvidia
   - conda-forge
 dependencies:
   - python=3.11
-  - pytorch>=2.2
-  - torchvision>=0.17
-  - pytorch-cuda=12.1
   - numpy
   - matplotlib
   - tqdm
+  - pip
+  - pip:
+      # CUDA 12.8 wheels are required for RTX 5090 / sm_120 support.
+      - --index-url https://download.pytorch.org/whl/cu128
+      - torch==2.10.0
+      - torchvision==0.25.0
