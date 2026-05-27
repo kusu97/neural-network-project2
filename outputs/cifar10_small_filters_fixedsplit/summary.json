@@ -1,0 +1,9 @@
+{
+  "best_val_acc": 0.9588,
+  "test_loss": 0.6515261922836304,
+  "test_acc": 0.9549,
+  "test_error": 0.04510000000000003,
+  "parameters": 2473402,
+  "best_epoch": 185,
+  "elapsed_minutes": 116.2855896671613
+}

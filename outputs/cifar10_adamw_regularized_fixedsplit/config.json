@@ -1,0 +1,35 @@
+{
+  "data": {
+    "data_dir": "./data",
+    "batch_size": 128,
+    "num_workers": 4,
+    "val_size": 5000,
+    "seed": 42,
+    "download": true,
+    "augment": "strong",
+    "cutout": true
+  },
+  "model": {
+    "name": "resnet",
+    "base_channels": 64,
+    "blocks_per_stage": 3,
+    "activation": "silu",
+    "dropout": 0.15,
+    "fc_dim": 256
+  },
+  "train": {
+    "epochs": 200,
+    "lr": 0.001,
+    "min_lr": 1e-05,
+    "optimizer": "adamw",
+    "momentum": 0.9,
+    "weight_decay": 0.01,
+    "label_smoothing": 0.1,
+    "mixup_alpha": 0.2,
+    "clip_grad_norm": 0.0,
+    "amp": true,
+    "seed": 42,
+    "output_dir": "./outputs/cifar10_adamw_regularized_fixedsplit"
+  },
+  "parameters": 4393546
+}

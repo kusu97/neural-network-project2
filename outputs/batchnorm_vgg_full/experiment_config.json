@@ -1,0 +1,20 @@
+{
+  "data_dir": "./data",
+  "output_dir": "./outputs/batchnorm_vgg_full",
+  "batch_size": 128,
+  "num_workers": 4,
+  "epochs": 20,
+  "n_items": 0,
+  "seed": 2020,
+  "learning_rates": [
+    0.001,
+    0.002,
+    0.0001,
+    0.0005
+  ],
+  "optimizer": "adam",
+  "weight_decay": 0.0,
+  "amp": true,
+  "analysis_every": 5,
+  "download": true
+}

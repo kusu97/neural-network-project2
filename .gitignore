@@ -26,11 +26,9 @@ Thumbs.db
 data/
 datasets/
 VGG_BatchNorm/data/
-outputs/
 results/
 runs/
 logs/
-figures/
 checkpoints/
 weights/
 saved_models/
@@ -45,6 +43,10 @@ saved_models/
 *.tar
 *.tar.gz
 *.zip
+
+# Temporary or obsolete experiment outputs
+outputs/batchnorm_vgg_debug/
+outputs/cifar10_baseline_relu/
 
 # Report files
 report.md
